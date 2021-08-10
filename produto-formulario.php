@@ -2,23 +2,32 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Loja</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/loja.css">
 </head>
 <body>
 
-	<form action="adiciona-produto.php">
-		
-		Nome:
-		<input type="text" name="nome">
-		<br/>
+	<div class="container">
+		<div class="principal">
 
-		Preço
-		<input type="number" name="preco">
-		<br/>
+			<h1>Formulário de Produto</h1>
 
-		<input type="submit" value="cadastrar">
+			<form action="adiciona-produto.php">
+				
+				Nome:
+				<input type="text" name="nome">
+				<br/>
 
-	</form>
+				Preço
+				<input type="number" name="preco">
+				<br/>
+
+				<input type="submit" value="cadastrar">
+
+			</form>
+		</div>
+	</div>
 
 </body>
 </html>
