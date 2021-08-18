@@ -1,5 +1,6 @@
 <?php include("cabecalho.php") ?>
-<?php include("conecta.php"); ?>
+<?php include("conecta.php") ?>
+<?php include("banco-produto.php") ?>
 
 <?php
 

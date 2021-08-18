@@ -1,12 +1,13 @@
 <?php include("cabecalho.php"); ?>
 <?php include("conecta.php"); ?>
+<?php include("banco-produto.php"); ?>
+
 
 <?php  
 
-	$resultado = mysqli_query($conexao, "select * from produtos");
-
-	while($produto =  mysqli_fetch_assoc($resultado)) {
-		echo $produto['nome'] . "<br/>";
+	$produtos =  listaProdutos($conexao);
+	foreach ($produtos as $produto) {
+		echo $produto['nome'] . "</br>";
 	}
 
 ?>
