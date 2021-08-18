@@ -1,14 +1,25 @@
 <?php include("cabecalho.php") ?>
 
-			<?php
+<?php
 
-			$nome = $_GET['nome'];
-			$preco = $_GET['preco'];
+	$nome = $_GET['nome'];
+	$preco = $_GET['preco'];
 
-			?>
+	$conexao = mysqli_connect('localhost', 'root', '', 'loja');
 
-			<p class="alert-success">
-				Produto <?php echo $nome; ?>, <?php echo $preco; ?> adicionado com sucesso!!!
-			</p>
+	$query = "insert into produtos (nome, preco) values ('{$nome}', {$preco})";
+
+	if(mysqli_query($conexao, $query)) {
+?>
+		<p class="alert-success">O produto <?= $nome ?>, <?= $preco ?> foi adicionado</p>
+<?php
+	} else {
+
+		echo $query;
+?>
+		<p class="alert-danger">O produto <?= $nome ?>, <?= $preco ?> não foi adicionado</p>
+<?php
+	}
+?>
 			
 <?php include("rodape.php") ?>	
