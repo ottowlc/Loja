@@ -11,9 +11,9 @@
 		return $produtos;
 	}
 
-	function insereProduto($conexao, $nome, $preco){
+	function insereProduto($conexao, $nome, $preco, $descricao){
 
-		$query = "insert into produtos (nome, preco) values ('{$nome}', {$preco})";
+		$query = "insert into produtos (nome, preco, descricao) values ('{$nome}', {$preco}, '{$descricao}')";
 		return mysqli_query($conexao, $query);
 
 	}
