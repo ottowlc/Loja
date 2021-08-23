@@ -1,4 +1,4 @@
-<?php 
+<?php  
 	include("cabecalho.php");
 	include("conecta.php");
 	include("banco-produto.php");
@@ -22,10 +22,13 @@
         <td><?= $produto['preco'] ?></td>
         <td><?= substr($produto['descricao'], 0, 40) ?></td>
         <td>
-          <a href="remove-produto.php?id=<?= $produto['id'] ?>" class="text-danger">remover</a>
+          <form action="remove-produto.php" method="post">
+            <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+            <button class="btn btn-danger">remover</button>
+          </form>
         </td>
       </tr>
-  <?php
+   <?php
     endforeacH  
   ?>  
 </table>
